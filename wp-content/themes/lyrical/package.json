@@ -1,0 +1,44 @@
+{
+  "name": "lyrical",
+  "title": "Lyrical",
+  "description": "Lyrical is a Primer child theme with a focus on photography and beautiful fonts.",
+  "version": "1.1.1",
+  "author": "GoDaddy",
+  "license": "GPL-2.0",
+  "repository": "godaddy/wp-lyrical-theme",
+  "homepage": "https://github.com/godaddy/wp-lyrical-theme",
+  "bugs": {
+    "url": "https://github.com/godaddy/wp-lyrical-theme/issues"
+  },
+  "engines": {
+    "php": ">= 5.2",
+    "wordpress": ">= 4.4"
+  },
+  "badges": [
+    "[![Build Status](https://travis-ci.org/<%= pkg.repository %>.svg?branch=master)](https://travis-ci.org/<%= pkg.repository %>)",
+    "[![devDependencies Status](https://david-dm.org/<%= pkg.repository %>/master/dev-status.svg)](https://david-dm.org/<%= pkg.repository %>/master?type=dev)",
+    "[![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/<%= pkg.repository %>/blob/master/license.txt)",
+    "[![PHP <%= pkg.engines.php %>](https://img.shields.io/badge/php-<% print(encodeURI(pkg.engines.php)) %>-8892bf.svg)](https://secure.php.net/supported-versions.php)",
+    "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
+  ],
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-cssjanus": "^0.4.0",
+    "grunt-dev-update": "^2.3.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-wp-readme-to-markdown": "^2.0.1",
+    "load-grunt-tasks": "^3.5.2",
+    "matchdep": "^2.0.0"
+  },
+  "scripts": {
+    "version": "grunt version && git add -A .",
+    "postversion": "git push && git push --tags"
+  }
+}

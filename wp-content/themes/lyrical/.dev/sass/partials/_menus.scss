@@ -1,0 +1,400 @@
+.main-navigation-container {
+	display: block;
+
+	@media #{$large-down}{
+		clear: both;
+		z-index: 9999;
+	}
+}
+
+.main-navigation {
+	display: none;
+	position: relative;
+	margin-top: 20px;
+
+	@media #{$large-up}{
+		float: right;
+		display: block;
+		margin-top: 0;
+	}
+
+	@media #{$large-down} {
+		&.open {
+			display: block;
+			@include clearfix;
+			position: absolute;
+			z-index: 9999;
+			margin-top: 0;
+			padding-top: 68px;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: $secondary-color;
+		}
+	}
+
+	.expand{
+		background-color: $secondary-color;
+		font-size: 1.8rem;
+		color: $menu-text-color;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 22px 0 21px;
+		width: 50px;
+		line-height: 1;
+		text-align: center;
+		border-bottom: 1px solid rgba(255,255,255,.1);
+		border-left: 1px solid rgba(255,255,255,.1);
+		text-indent: 0;
+
+		&:hover{
+			color: $menu-text-hover-color;
+		}
+
+		&:before{
+			content: "+";
+		}
+
+		@media #{$large-up}{
+			background-color: none;
+			border-bottom: none;
+			display: none;
+
+			&:hover{
+				background-color: $secondary-color;
+			}
+
+		}
+
+	}
+
+	.menu-item-has-children{
+		position: relative;
+
+		&.open > .expand:before{
+			content: "-";
+		}
+	}
+
+	.menu-main-menu-container {
+
+		@media #{$large-up}{
+			float: left;
+			margin-left: 25px;
+		}
+	}
+
+	li:first-child a{
+		@media #{$large-down}{
+			border-top: 1px solid rgba(255,255,255,.1);
+		}
+	}
+
+	li li{
+		text-indent: 1rem;
+
+		&:first-child a{
+			@media #{$large-down}{
+				border-top: none;
+			}
+		}
+
+	}
+
+	li li li{
+		text-indent: 1.5rem;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		@media #{$large-down}{
+
+			.open > .sub-menu{
+				display: block;
+			}
+		}
+
+		ul {
+			z-index: 99999;
+
+			@media #{$large-down}{
+				display: none;
+			}
+
+			@media #{$large-up}{
+				position: absolute;
+				left: -999em;
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+				ul {
+					left: -999em;
+					top: 0;
+				}
+
+				li {
+					&:hover > ul,
+					&.focus > ul {
+						left: 100%;
+					}
+				}
+
+				a {
+					width: 200px;
+				}
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	@media #{$large-up}{
+
+		li {
+			position: relative;
+			float: left;
+		}
+
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current_page_parent > a,
+		.current-menu-ancestor > a {
+			border-bottom-color: white;
+		}
+
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		padding: .4em 0;
+		margin-left: 1em;
+		margin-right: 1em;
+		border-bottom: 2px solid transparent;
+		color: white;
+
+		@media #{$large-down}{
+			padding-top: 1.2em;
+			padding-bottom: 1.2em;
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 1em;
+			padding-right: 1em;
+			border-bottom: 1px solid rgba(255,255,255,.1);
+		}
+
+		@media #{$large-up}{
+			&:hover,
+			&:visited:hover {
+				border-bottom-color: white;
+			}
+		}
+	}
+
+	li li a{
+		margin-left: 0;
+		margin-right: 0;
+		background-color: $menu-background-color;
+		color: $menu-text-color;
+
+		@media #{$large-up}{
+			border-bottom-width: 0;
+		}
+
+		&:hover,
+		&:visited:hover {
+			background-color: $menu-background-hover-color;
+			color: $menu-text-hover-color;
+		}
+	}
+
+	.sub-menu .menu-item-has-children > a::after {
+		position: absolute;
+		content: "";
+		width: 0;
+		height: 0;
+		right: 10px;
+		top: 50%;
+		border-bottom: 7px solid transparent;
+		border-top: 7px solid transparent;
+		border-left: 7px solid $menu-text-color;
+		transform: translateY(-50%);
+		display: none;
+
+		@media #{$large-up}{
+			display: inline;
+		}
+	}
+
+	.sub-menu .menu-item-has-children > a:hover::after {
+		border-left-color: $menu-text-hover-color;
+	}
+}
+
+body.no-max-width .main-navigation {
+	max-width: none;
+}
+
+.menu-toggle {
+	width: 3.6rem;
+	padding: 0.3rem;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 0;
+	display: block;
+	z-index: 99999;
+
+	@media #{$large-up}{
+		display: none;
+	}
+
+	div {
+		background-color: #fff;
+		margin: 0.43rem .86rem 0.43rem 0;
+		transform: rotate(0deg);
+		transition: .15s ease-in-out;
+		transform-origin: left center;
+		height: 0.32rem;
+	}
+
+	&.open {
+
+		div {
+			&:nth-child(1) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				width: 0%;
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+
+
+/**
+ * Post navigation
+ */
+.navigation {
+	@extend .row;
+
+	.nav-links {
+		@extend .large-12;
+		@extend .columns;
+		margin-bottom: 1em;
+		margin-bottom: 1rem;
+	}
+}
+
+.navigation.pagination {
+	clear: both;
+	margin: 0 0 1.5em;
+
+	.nav-links {
+		text-align: center;
+
+		.page-numbers {
+			display: inline-block;
+			border: none;
+			border-radius: 3px;
+			line-height: 1;
+			margin: 0 0.25em;
+			padding: 0.5em 0.75em;
+			white-space: nowrap;
+
+			&.dots {
+				background: none;
+			}
+
+			&.current {
+				color: $menu-background-color;
+				background-color: $color-link;
+			}
+		}
+	}
+
+	.paging-nav-text {
+		display: none;
+	}
+
+	@media #{$small-only} {
+
+		.paging-nav-text {
+			display: inline-block;
+			font-size: 0.9rem;
+			font-weight: normal;
+			color: $menu-text-color;
+		}
+
+		.nav-links {
+			float: right;
+
+			.page-numbers {
+				&:not(.prev, .next) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+
+.footer-menu {
+	margin-bottom: 2em;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			font-size: .875rem;
+			font-weight: 600;
+			margin: 0 10px;
+			text-align: center;
+			text-transform: uppercase;
+
+			@media only screen and (min-width: 568px) {
+				text-align: left;
+			}
+
+			a {
+				color: white;
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,10 @@
+.clear,
+.entry-content,
+.comment-content,
+.site-header,
+.site-content,
+.site-footer,
+.page-content {
+	@include clearfix;
+	@include clearfix-after;
+}
