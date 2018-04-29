@@ -4213,3 +4213,53 @@ body.woocommerce-cart .primer-wc-cart-sub-menu {
 	position:absolute;
 	top:0;
 }
+.sjb-page{
+	padding-left:1.25rem;
+	padding-right:1.25rem;	
+}
+.sjb-page .jobpost-form .file input[type="file"]{
+	left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+
+}
+
+.sjb-page .jobpost-form .file {
+	background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    font-size: 16px;
+    /*height: 46px;*/
+    line-height: 1.42857;
+    padding: 10px 12px;
+    position: relative;
+    text-align: left;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+.sjb-page .jobpost-form .file div
+{
+	background: #3297fa;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+   /* height: 32px;*/
+    padding: 6px 12px;
+    position: absolute;
+    right: 6px;
+    text-align: center;
+    top: 6px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.sjb-page .jobpost-form label {
+    font-size: 16px;
+    font-weight: 400;
+}

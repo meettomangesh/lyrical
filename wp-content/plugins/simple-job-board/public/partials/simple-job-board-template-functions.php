@@ -778,7 +778,7 @@ if (!function_exists('sjb_job_listing_wrapper_start')) {
      */
     function sjb_job_listing_wrapper_start() {
 
-        get_simple_job_board_template('global/content-wrapper-start.php');
+        //get_simple_job_board_template('global/content-wrapper-start.php');
     }
 
 }
