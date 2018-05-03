@@ -41,7 +41,8 @@ do_action( 'sjb_before_main_content' );
 <!-- Start Content Wrapper
 ================================================== -->
 <div class="sjb-page">
-    <div class="sjb-detail">
+    <!--<div class="sjb-detail"> -->
+    <div class="">
         <div class="list-data">
             <?php
             while ( have_posts() ) : the_post();
@@ -57,7 +58,7 @@ do_action( 'sjb_before_main_content' );
             endwhile;
             ?>
         </div>
-        <div class="clearfix"></div>
+        <!--<div class="clearfix"></div>-->
     </div>
 </div>
 <!-- ==================================================
