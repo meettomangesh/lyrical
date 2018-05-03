@@ -310,6 +310,9 @@ body.jobpost_page_sjb-add-ons {
     padding: 10px 0;
     height: 28px;
 }
+#settings-email_notifications .sjb-form-group {
+    height:auto;
+}
 @media (min-width: 320px) and (max-width: 768px) {
     .sjb-form-group {
         height: inherit;
